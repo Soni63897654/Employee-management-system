@@ -1,0 +1,116 @@
+/* public/css/employee-list.css */
+
+body { 
+    background-color: #f0f2f5; 
+    font-size: 0.88rem; 
+    font-family: 'Inter', sans-serif; 
+    color: #334155;
+}
+
+.card { 
+    border: 1px solid #e2e8f0; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+    border-radius: 12px; 
+    overflow: hidden;
+    background: #fff;
+}
+
+.card-header {
+    background-color: #fff !important;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 1.25rem;
+}
+
+/* --- FILTERS UI --- */
+.filter-section {
+    background-color: #ffffff;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.filter-section .form-control, 
+.filter-section .form-select, 
+.filter-section .input-group-text,
+.date-range-group {
+    height: 38px !important;
+    font-size: 0.85rem;
+}
+
+.date-range-group { 
+    display: flex; 
+    align-items: center; 
+    background: #fff; 
+    border: 1px solid #cbd5e1; 
+    border-radius: 6px; 
+    padding: 0 10px; 
+}
+
+.date-range-group input { 
+    border: none !important; 
+    outline: none;
+    width: 105px; 
+    font-size: 0.8rem; 
+}
+
+.date-range-label { 
+    font-size: 0.75rem; 
+    color: #64748b; 
+    font-weight: 600; 
+    margin-right: 5px; 
+}
+
+/* --- TABLE --- */
+.table thead th {
+    background-color: #f8fafc;
+    color: #64748b;
+    font-size: 0.75rem;
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table tbody td { 
+    padding: 1rem; 
+    vertical-align: middle; 
+    border-bottom: 1px solid #f1f5f9; 
+}
+
+.emp-name { 
+    color: #2563eb; 
+    font-weight: 600; 
+    text-decoration: none; 
+}
+
+.emp-name:hover {
+    text-decoration: underline;
+}
+
+.emp-code { 
+    background: #f1f5f9; 
+    padding: 4px 8px; 
+    border-radius: 4px; 
+    font-family: monospace; 
+}
+
+/* Loader Overlay */
+#table_overlay {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(255,255,255,0.7); 
+    z-index: 10;
+    display: none; 
+    justify-content: center; 
+    align-items: center;
+}
+
+label.error { 
+    color: #ef4444; 
+    font-size: 0.75rem; 
+    margin-top: 4px; 
+}
+
+input.error, select.error { 
+    border-color: #ef4444 !important; 
+}

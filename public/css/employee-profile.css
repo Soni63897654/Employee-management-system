@@ -1,0 +1,103 @@
+/* public/css/employee-profile.css */
+body { 
+    background-color: #f8fafc; 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    color: #1e293b;
+    padding: 30px 0;
+}
+
+.profile-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    padding: 2rem 2.5rem;
+    background: #fff;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.emp-code {
+    font-size: 0.85rem;
+    background: #f1f5f9;
+    color: #64748b;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.details-container {
+    padding: 2rem 2.5rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    white-space: nowrap;
+}
+
+.section-line {
+    height: 1px;
+    background: #f1f5f9;
+    width: 100%;
+    margin-left: 1rem;
+}
+
+.info-box {
+    margin-bottom: 1.5rem;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-label i {
+    color: #6366f1;
+}
+
+.info-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.btn-back {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    background: white;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn-back:hover {
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+.footer-info {
+    background: #f8fafc;
+    padding: 1rem 2.5rem;
+    border-top: 1px solid #f1f5f9;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
