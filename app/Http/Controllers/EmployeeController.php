@@ -44,25 +44,32 @@ class EmployeeController extends Controller
     public function fetchEmployees(Request $request)
     {
         try {
-            $employees = Employee::with(['department', 'manager'])->where('role_id', 3)
-                ->when($request->search, function ($query) use ($request) {
-                    $query->where(function ($q) use ($request) {
-                        $q->where('full_name', 'like', "%{$request->search}%")
-                          ->orWhere('employee_code', 'like', "%{$request->search}%");
-                    });
-                })
-                ->when($request->department_id, fn($q) => $q->where('department_id', $request->department_id))
-                ->when($request->manager_id, fn($q) => $q->where('manager_id', $request->manager_id))
-                ->when($request->from_date, fn($q) => $q->whereDate('joining_date', '>=', $request->from_date))
-                ->when($request->to_date, fn($q) => $q->whereDate('joining_date', '<=', $request->to_date))
-                ->latest()
-                ->paginate(10);
-
+            $employees = Employee::with(['department', 'manager'])
+                ->where('role_id', 3);
+            if ($request->search) {
+                $employees->where(function ($query) use ($request) {
+                    $query->where('full_name', 'like', '%' . $request->search . '%')
+                        ->orWhere('employee_code', 'like', '%' . $request->search . '%');
+                });
+            }
+            if ($request->department_id) {
+                $employees->where('department_id', $request->department_id);
+            }
+            if ($request->manager_id) {
+                $employees->where('manager_id', $request->manager_id);
+            }
+            if ($request->from_date) {
+                $employees->whereDate('joining_date', '>=', $request->from_date);
+            }
+            if ($request->to_date) {
+                $employees->whereDate('joining_date', '<=', $request->to_date);
+            }
+            $employees = $employees->latest()->paginate(10);
             return response()->json($employees);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return response()->json([
-                'status' => 403, 
-                'message' => 'Failed to fetch employees', 
+                'status' => 403,
+                'message' => 'Failed to fetch employees',
                 'error' => $e->getMessage()
             ]);
         }
